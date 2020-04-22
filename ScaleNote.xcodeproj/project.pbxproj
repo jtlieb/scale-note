@@ -30,6 +30,7 @@
 		7643C02A244924BF00D55CC4 /* SuezOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7643C029244924BF00D55CC4 /* SuezOne-Regular.ttf */; };
 		7643C02D244925B100D55CC4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643C02C244925B100D55CC4 /* Color.swift */; };
 		76ABDD42244FFCCA009B5C13 /* EditTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABDD41244FFCCA009B5C13 /* EditTagsView.swift */; };
+		76ABDD4424501936009B5C13 /* TagCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABDD4324501936009B5C13 /* TagCellView.swift */; };
 		76FCB70B24493BFC008FBABB /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB70A24493BFC008FBABB /* NoteView.swift */; };
 		76FCB70D244942A5008FBABB /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB70C244942A5008FBABB /* NavBar.swift */; };
 		76FCB70F24494A74008FBABB /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB70E24494A74008FBABB /* NoteCellView.swift */; };
@@ -82,6 +83,7 @@
 		7643C029244924BF00D55CC4 /* SuezOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SuezOne-Regular.ttf"; sourceTree = "<group>"; };
 		7643C02C244925B100D55CC4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		76ABDD41244FFCCA009B5C13 /* EditTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagsView.swift; sourceTree = "<group>"; };
+		76ABDD4324501936009B5C13 /* TagCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCellView.swift; sourceTree = "<group>"; };
 		76FCB70A24493BFC008FBABB /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		76FCB70C244942A5008FBABB /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		76FCB70E24494A74008FBABB /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				7643C0192449206900D55CC4 /* Rubik-Regular.ttf */,
 				7643C0112449206900D55CC4 /* Rubik-Bold.ttf */,
 				7643C0132449206900D55CC4 /* Rubik-Medium.ttf */,
+				76ABDD4324501936009B5C13 /* TagCellView.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				76FCB70F24494A74008FBABB /* NoteCellView.swift in Sources */,
 				76ABDD42244FFCCA009B5C13 /* EditTagsView.swift in Sources */,
 				7643C00E244913A400D55CC4 /* Note.swift in Sources */,
+				76ABDD4424501936009B5C13 /* TagCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
