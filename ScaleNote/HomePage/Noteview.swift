@@ -10,24 +10,14 @@ import Foundation
 import SwiftUI
 
 struct NoteView: View {
-    
+    @EnvironmentObject private var state: NoteState
+    @State var isNew: Bool
     @Binding var note: Note
-    @Binding var tags: [Tag]
-    @Binding var scales: [Scale]
-    @Binding var globalNotes: [Note]
-    var isNew: Bool
     
-    init(note: Binding<Note>, tags: Binding<[Tag]>, scales: Binding<[Scale]>, globalNotes: Binding<[Note]>, isNew: Bool) {
-        self._note = note
-        self._tags = tags
-        self._scales = scales
-        self._globalNotes = globalNotes
-        self.isNew = isNew
-        
-        
-    }
+    
     
     var body: some View {
+        
         return VStack(alignment: .leading) {
             HStack(alignment: .top){
                 TextField(note.title, text: self.$note.title)
@@ -37,7 +27,7 @@ struct NoteView: View {
                     .padding(.top, -20)
             Spacer()
             }
-            NavigationLink(destination: EditTagsView(note: self.$note, tags: self.$tags, scales: self.$scales)) {
+            NavigationLink(destination: EditTagsView(note: self.$note).environmentObject(self.state)) {
                 Text("hello")
             }
            TextField(note.content, text: self.$note.content)

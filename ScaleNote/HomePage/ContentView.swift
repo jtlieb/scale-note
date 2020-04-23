@@ -13,12 +13,10 @@ import Foundation
 struct ContentView: View {
     
     @State var count = 0
-    @State var newNote: Note =  Note(title: "New Note", content: "Write your thoughts here", tags: [], scales: [])
-    @State var navigationBarHidden = true
-    @State var tags: [Tag] = [Tag(id: UUID(), name: "TAGGGG", color: .appPurple)]
-    @State var scales: [Scale] = []
+    @State var newNote: Note =  Note(title: "New Note", content: "Write your thoughts here", tags: [])
+    @State var notes: [Note] = [Note(title: "Test Title", content: "This is the content of my note", tags: [Scale(name: "Justin", color: .appPurple, value: 5, max: 0, min: 10)]),Note(title: "Test Title", content: "This is the content of my note", tags: [Scale(name: "Justin", color: .appPurple, value: 5, max: 0, min: 10)])]
     
-    @State var notes: [Note] = [Note(title: "Test Title", content: "This is the content of my note", tags: [], scales: [Scale(name: "Justin", value: 5, max: 0, min: 10, color: .appPurple)]),Note(title: "Test Title", content: "This is the content of my note", tags: [], scales: [Scale(name: "Justin", value: 5, max: 0, min: 10, color: .appPurple)])]
+    @EnvironmentObject private var state: NoteState
     
     
     var body: some View {
@@ -30,10 +28,11 @@ struct ContentView: View {
                         .foregroundColor(.appPurple)
                         .padding(.leading, 20)
                     Spacer()
-                    NavigationLink(destination: NoteView(note: self.$newNote , tags: self.$tags, scales: self.$scales, globalNotes: self.$notes,isNew: true)) {
+                    NavigationLink(destination: NoteView(isNew: true, note: self.$newNote).environmentObject(self.state)) {
                         Button(action: {
-                            self.notes.append(self.newNote)
-                        }) {
+                            self.state.addNewNote(note: Note(id: UUID(), title: "New Note", content: "Write down your thoughts here...", tags: []))
+                        }){
+                        
                         Image(systemName: "pencil.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30, alignment: .trailing)
@@ -41,12 +40,13 @@ struct ContentView: View {
                             .foregroundColor(.appGreen)
                         }}
                 }.padding(.top, -20)
-                List(notes) { note in
-                    NoteCellView(note: note, scales: self.$scales, tags: self.$tags, notes: self.$notes)
+                List(state.state.notes) { note in
+                    NoteCellView(note: note
+                    ).environmentObject(self.state)
                 }
             
             }
-        }.navigationBarTitle("Notes").navigationBarHidden(true)
+        }.navigationBarTitle("Notes").navigationBarHidden(true).environmentObject(self.state)
     }
 }
 
