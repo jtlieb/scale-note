@@ -66,9 +66,9 @@ struct ScaleCellView: View {
             }
             if(self.selected) {
                 HStack(){
-                    Text("\(scale.min)").font(Font.custom("Rubik-Regular", size: 16)).frame(width: 30, alignment: .center).opacity(0.7)
-                    Text("\(self.note.scores[self.scale.id] ?? 0)").font(Font.custom("Rubik-Bold", size: 30)).frame(width: 50, alignment: .center)
-                    Text("\(scale.max )").font(Font.custom("Rubik-Regular", size: 16)).frame(width: 30, alignment: .center).opacity(0.7)
+                    Text("\(scale.min)").font(Font.custom("Rubik-Regular", size: 16)).frame(width: 30, alignment: .center).opacity(0.7).foregroundColor(.white)
+                    Text("\(self.note.scores[self.scale.id] ?? 0)").font(Font.custom("Rubik-Bold", size: 30)).frame(width: 50, alignment: .center).foregroundColor(.white)
+                    Text("\(scale.max )").font(Font.custom("Rubik-Regular", size: 16)).frame(width: 30, alignment: .center).opacity(0.7).foregroundColor(.white)
                     Spacer()
                         ToggleView(scale: self.$scale, note: self.$note)
                     
@@ -110,7 +110,7 @@ struct ToggleView: View {
              }, onDecrement: {
                 self.subtract()
                 }).frame(width: 120, height: 60).labelsHidden()
-        }    }
+            }    }.colorScheme(.dark)
     }
         
 }

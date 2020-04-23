@@ -14,7 +14,6 @@ struct ContentView: View {
     
     @State var count = 0
     @State var newNote: Note =  Note(title: "New Note", content: "Write your thoughts here", tags: [])
-    @State var notes: [Note] = [Note(title: "Test Title", content: "This is the content of my note", tags: [Scale(name: "Justin", color: .appPurple, value: 5, max: 0, min: 10)]),Note(title: "Test Title", content: "This is the content of my note", tags: [Scale(name: "Justin", color: .appPurple, value: 5, max: 0, min: 10)])]
     
     @EnvironmentObject private var state: NoteState
     

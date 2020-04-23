@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		7643C0252449206900D55CC4 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7643C01A2449206900D55CC4 /* Rubik-BoldItalic.ttf */; };
 		7643C02A244924BF00D55CC4 /* SuezOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7643C029244924BF00D55CC4 /* SuezOne-Regular.ttf */; };
 		7643C02D244925B100D55CC4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643C02C244925B100D55CC4 /* Color.swift */; };
+		767474E8245201AE00874B53 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 767474E7245201AE00874B53 /* ASCollectionView */; };
 		76AB432B245119FD00E8CDB3 /* ScaleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB432A245119FD00E8CDB3 /* ScaleCellView.swift */; };
 		76AB432D245159AC00E8CDB3 /* NewTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB432C245159AC00E8CDB3 /* NewTagView.swift */; };
 		76ABDD42244FFCCA009B5C13 /* EditTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABDD41244FFCCA009B5C13 /* EditTagsView.swift */; };
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767474E8245201AE00874B53 /* ASCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +268,9 @@
 			dependencies = (
 			);
 			name = ScaleNote;
+			packageProductDependencies = (
+				767474E7245201AE00874B53 /* ASCollectionView */,
+			);
 			productName = ScaleNote;
 			productReference = 7643BFDA2449136100D55CC4 /* ScaleNote.app */;
 			productType = "com.apple.product-type.application";
@@ -338,6 +343,9 @@
 				Base,
 			);
 			mainGroup = 7643BFD12449136000D55CC4;
+			packageReferences = (
+				767474E6245201AE00874B53 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+			);
 			productRefGroup = 7643BFDB2449136100D55CC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -726,6 +734,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		767474E6245201AE00874B53 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		767474E7245201AE00874B53 /* ASCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 767474E6245201AE00874B53 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7643BFD22449136000D55CC4 /* Project object */;
 }

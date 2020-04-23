@@ -25,6 +25,12 @@ class Scale: Tag {
     var max: Int
     var min: Int
     
+    enum CodingKeys<String, CodingKey> {
+        case value
+        case max
+        
+    }
+    
     init(name: String, color: Color, value: Int, max: Int, min: Int) {
         self.value = value
         self.max = max
@@ -43,6 +49,7 @@ class Tag: Identifiable, Equatable {
     var id = UUID()
     var name: String
     var color: Color
+    
     
     init(name: String, color: Color) {
         self.name = name

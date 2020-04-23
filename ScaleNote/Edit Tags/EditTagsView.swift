@@ -17,6 +17,22 @@ struct EditTagsView: View {
     @EnvironmentObject private var state: NoteState
     @State var newTag = false
     
+    func getNextColor() -> Color {
+        guard self.state.state.tags.count > 0 else {
+           return .appGreen
+        }
+        switch self.state.state.tags.last!.color {
+        case .appGreen:
+            return .appRed
+        case .appRed:
+            return .appPurple
+        default:
+            return .appGreen
+            
+        }
+        
+    }
+    
     var body: some View {
         VStack() {
             HStack(alignment: .top){
@@ -24,19 +40,17 @@ struct EditTagsView: View {
                    .font(Font.custom("SuezOne-Regular", size: 36))
                Spacer()
                 Button(action: {
-                    self.newTag.toggle()
+                    self.newTag = true
                 }) {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .trailing)
                     .padding(.top, 10)
                     .padding(.trailing, 3)
-                    
                     .foregroundColor(.appGreen)
                 }.sheet(isPresented: self.$newTag) {
-                    Button(action: { self.newTag.toggle()}) {
-                        NewTagVew(active: self.$newTag)
-                    }
+                    NewTagVew(active: self.$newTag, color: self.getNextColor()).environmentObject(self.state)
+                    
                 }
                 
             }

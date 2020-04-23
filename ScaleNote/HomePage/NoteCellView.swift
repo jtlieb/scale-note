@@ -20,8 +20,22 @@ struct NoteCellView: View {
                 Text("\(note.title)")
                     .font(Font.custom("Rubik-Medium", size: 20))
                     .foregroundColor(.primary)
-                    .padding(.bottom, 10)
-                
+                    
+                HStack {
+                    ForEach(self.note.tags) { tag in
+                        ZStack {
+                            HStack {
+                            if tag is Scale {
+                                Text("\(self.note.scores[tag.id] ?? 0)").font(Font.custom("Rubik-Bold", size: 14)).foregroundColor(.white)
+                                .padding(.horizontal, 10).padding(.vertical, 5)
+                            }
+                            Text(tag.name).font(Font.custom("Rubik-Medium", size: 14)).foregroundColor(.white)
+                                .padding(.horizontal, 10).padding(.vertical, 5)
+                            }
+                            }.background(Rectangle().foregroundColor(tag.color)).cornerRadius(2)
+                    }.frame(height: 40, alignment: .leading)
+                    
+                }.padding(.bottom, 10)
                 Text(note.content)
                     .multilineTextAlignment(.leading)
                     .font(Font.custom("Rubik-Regular", size: 16))
