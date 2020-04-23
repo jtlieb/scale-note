@@ -16,6 +16,7 @@ struct EditTagsView: View {
     @Binding var note: Note
     @EnvironmentObject private var state: NoteState
     @State var newTag = false
+    @State var filterTags: [Tag] = []
     
     func getNextColor() -> Color {
         guard self.state.state.tags.count > 0 else {
@@ -51,19 +52,21 @@ struct EditTagsView: View {
                 }.sheet(isPresented: self.$newTag) {
                     NewTagVew(active: self.$newTag, color: self.getNextColor()).environmentObject(self.state)
                     
-                }
+                
                 
             }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 30)
                 .padding(.top, -20)
+                
+            }.padding(.horizontal, 20).padding(.bottom, 15)
             Spacer()
             EditTagsListView(note: self.$note).environmentObject(self.state)
-            
+        }
         }
         
     }
-}
+
 
 struct TagWrapperView: View {
     

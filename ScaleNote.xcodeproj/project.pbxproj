@@ -31,6 +31,9 @@
 		7643C02A244924BF00D55CC4 /* SuezOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7643C029244924BF00D55CC4 /* SuezOne-Regular.ttf */; };
 		7643C02D244925B100D55CC4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643C02C244925B100D55CC4 /* Color.swift */; };
 		767474E8245201AE00874B53 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 767474E7245201AE00874B53 /* ASCollectionView */; };
+		767474EA2452124300874B53 /* FilterTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767474E92452124300874B53 /* FilterTagsView.swift */; };
+		767474ED2452139400874B53 /* FilterTagCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767474EC2452139400874B53 /* FilterTagCellView.swift */; };
+		767474EF2452156800874B53 /* FilterScaleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767474EE2452156800874B53 /* FilterScaleCellView.swift */; };
 		76AB432B245119FD00E8CDB3 /* ScaleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB432A245119FD00E8CDB3 /* ScaleCellView.swift */; };
 		76AB432D245159AC00E8CDB3 /* NewTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB432C245159AC00E8CDB3 /* NewTagView.swift */; };
 		76ABDD42244FFCCA009B5C13 /* EditTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ABDD41244FFCCA009B5C13 /* EditTagsView.swift */; };
@@ -87,6 +90,9 @@
 		7643C01A2449206900D55CC4 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		7643C029244924BF00D55CC4 /* SuezOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SuezOne-Regular.ttf"; sourceTree = "<group>"; };
 		7643C02C244925B100D55CC4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		767474E92452124300874B53 /* FilterTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTagsView.swift; sourceTree = "<group>"; };
+		767474EC2452139400874B53 /* FilterTagCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTagCellView.swift; sourceTree = "<group>"; };
+		767474EE2452156800874B53 /* FilterScaleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScaleCellView.swift; sourceTree = "<group>"; };
 		76AB432A245119FD00E8CDB3 /* ScaleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCellView.swift; sourceTree = "<group>"; };
 		76AB432C245159AC00E8CDB3 /* NewTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTagView.swift; sourceTree = "<group>"; };
 		76ABDD41244FFCCA009B5C13 /* EditTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagsView.swift; sourceTree = "<group>"; };
@@ -210,6 +216,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		767474EB2452138300874B53 /* FilterTags */ = {
+			isa = PBXGroup;
+			children = (
+				767474E92452124300874B53 /* FilterTagsView.swift */,
+				767474EC2452139400874B53 /* FilterTagCellView.swift */,
+				767474EE2452156800874B53 /* FilterScaleCellView.swift */,
+			);
+			path = FilterTags;
+			sourceTree = "<group>";
+		};
 		76F923F52450EDCB003D9A15 /* Edit Tags */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +260,7 @@
 		76FCB70724493BCD008FBABB /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				767474EB2452138300874B53 /* FilterTags */,
 				7643BFE12449136100D55CC4 /* ContentView.swift */,
 				76FCB70E24494A74008FBABB /* NoteCellView.swift */,
 				76FCB70A24493BFC008FBABB /* NoteView.swift */,
@@ -407,11 +424,14 @@
 				7643BFE22449136100D55CC4 /* ContentView.swift in Sources */,
 				76FCB70D244942A5008FBABB /* NavBar.swift in Sources */,
 				76AB432D245159AC00E8CDB3 /* NewTagView.swift in Sources */,
+				767474ED2452139400874B53 /* FilterTagCellView.swift in Sources */,
 				76AB432B245119FD00E8CDB3 /* ScaleCellView.swift in Sources */,
 				7643C02D244925B100D55CC4 /* Color.swift in Sources */,
 				76FCB70F24494A74008FBABB /* NoteCellView.swift in Sources */,
 				7625BAA22450F5D2003ABF99 /* GlobalState.swift in Sources */,
 				76ABDD42244FFCCA009B5C13 /* EditTagsView.swift in Sources */,
+				767474EA2452124300874B53 /* FilterTagsView.swift in Sources */,
+				767474EF2452156800874B53 /* FilterScaleCellView.swift in Sources */,
 				7643C00E244913A400D55CC4 /* Note.swift in Sources */,
 				76ABDD4424501936009B5C13 /* TagCellView.swift in Sources */,
 			);
